@@ -1,0 +1,40 @@
+swagger: '2.0'
+info:
+  description: Набор сервисов для работы с системой мониторинга состояния строительства объектов капитального строительства (ОКС)
+  version: "1.0.0"
+  title: RestAPI
+consumes:
+  - application/json
+produces:
+  - application/json  
+basePath: "/api"  
+paths:
+    /acts:
+      get:
+        summary: Получить список актов
+        operationId: Main.getActs
+        responses:
+          200:
+            description: OK
+            schema:
+              type: object
+              properties:
+                acts:
+                  type: array
+                  items:
+                    type: string
+
+    /dashboard/bad_contractors:
+      get:
+        summary: Получить статистику по застройщикам
+        operationId: Main.getBadContractors
+        responses:
+          200:
+            description: OK
+            schema:
+              type: object
+              properties:
+                dashboard:
+                  type: array
+                  items:
+                    type: string                    
